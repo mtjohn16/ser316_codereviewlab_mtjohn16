@@ -45,6 +45,7 @@ public class Checking extends Account {
 				if (numWithdraws > 10) {
 					balance = balance - 2.0f;
 				}
+				
 				if (balance < 0.0f) {
 					setState(State.OVERDRAWN);
 				}
