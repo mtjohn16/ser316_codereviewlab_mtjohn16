@@ -1,7 +1,8 @@
 package banking.primitive.core;
 
 public class Checking extends Account {
-
+	
+	private static final float WITHDRAW_FEE = 2.0F;
 	private static final long serialVersionUID = 11L;
 	private int numWithdraws = 0;
 	
@@ -43,7 +44,7 @@ public class Checking extends Account {
 				balance = balance - amount;
 				numWithdraws++;
 				if (numWithdraws > 10)
-					balance = balance - 2.0f;
+					balance = balance - WITHDRAW_FEE;
 				if (balance < 0.0f) {
 					setState(State.OVERDRAWN);
 				}
